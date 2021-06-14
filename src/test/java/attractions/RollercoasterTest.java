@@ -20,7 +20,7 @@ public class RollercoasterTest {
         visitor = new Visitor(14, 1.2, 40.0);
         visitor2 = new Visitor(20, 2.0, 40.0);
         visitor3 = new Visitor(20, 1.0, 40.0);
-        visitor4 = new Visitor(999, 1.46, 40.0);
+        visitor4 = new Visitor(999, 2.01, 40.0);
     }
 
     @Test
@@ -59,9 +59,21 @@ public class RollercoasterTest {
     }
 
     @Test
-    public void chargesForEntry(){
+    public void chargesForEntryTallHeight(){
+        rollerCoaster.sellTicket(visitor4);
+        assertEquals(23.20, visitor4.getMoney(), 0.00);
+    }
 
-        assertEquals(31.60, visitor4.getMoney(), 0.00);
+    @Test
+    public void chargesForEntryNormalHeight(){
+        assertEquals("ticket sold",rollerCoaster.sellTicket(visitor2));
+        assertEquals(31.60, visitor2.getMoney(), 0.00);
+    }
+
+    @Test
+    public void wontChargeForFailedSecurityCheck(){
+        assertEquals("this visitor may not buy a ticket",rollerCoaster.sellTicket(visitor));
+        assertEquals(40.00, visitor.getMoney(), 0.00);
     }
 
 }

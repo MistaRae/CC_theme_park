@@ -12,11 +12,23 @@ public class Dodgems extends Attraction implements IReviewed, ITicketed {
 
     @Override
     public double defaultPrice() {
-        return 0;
+        return 4.50;
     }
 
     @Override
     public double priceFor(Visitor visitor) {
-        return 0;
+        if (visitor.getAge() < 12) {
+            return defaultPrice() / 2;
+        } else
+        return defaultPrice();
     }
+
+    public String sellTicket(Visitor visitor){
+        double ticketPrice = priceFor(visitor);
+        if (visitor.getMoney() > ticketPrice) {
+            visitor.buyTicket(ticketPrice);
+            return "ticket sold";
+        } else return "this visitor may not buy a ticket";
+    }
+
 }

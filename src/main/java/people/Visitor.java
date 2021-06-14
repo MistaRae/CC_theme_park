@@ -23,4 +23,8 @@ public class Visitor {
     public double getMoney() {
         return money;
     }
+
+    public void buyTicket(double ticketPrice){
+        this.money -= ticketPrice;
+    }
 }
