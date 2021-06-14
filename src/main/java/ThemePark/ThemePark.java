@@ -35,8 +35,14 @@ public class ThemePark {
         ArrayList<IReviewed> allowed = new ArrayList<>();
         int age = visitor.getAge();
         double height = visitor.getHeight();
-        if (age > 18){
-            allowed.add()
+        if (age >= 18){
+            allowed = ;
+            return allowed;
+        } else if (age >= 15) {
+            allowed = ;
+            return allowed;
+        } else if (age >= 12 && height >= 1.45){
+            allowed = ;
             return allowed;
         }
     }
