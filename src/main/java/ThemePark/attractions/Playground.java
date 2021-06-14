@@ -1,4 +1,4 @@
-package attractions;
+package ThemePark.attractions;
 
 import behaviours.IReviewed;
 import behaviours.ISecurity;

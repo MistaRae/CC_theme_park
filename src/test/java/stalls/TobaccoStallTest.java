@@ -1,5 +1,7 @@
 package stalls;
 
+import ThemePark.stalls.ParkingSpot;
+import ThemePark.stalls.TobaccoStall;
 import org.junit.Before;
 import org.junit.Test;
 import people.Visitor;

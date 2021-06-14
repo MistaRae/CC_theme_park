@@ -1,5 +1,6 @@
 package attractions;
 
+import ThemePark.attractions.Dodgems;
 import org.junit.Before;
 import org.junit.Test;
 import people.Visitor;

@@ -1,6 +1,7 @@
 package stalls;
 
-import attractions.Park;
+import ThemePark.stalls.CandyflossStall;
+import ThemePark.stalls.ParkingSpot;
 import org.junit.Before;
 import org.junit.Test;
 

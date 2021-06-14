@@ -1,4 +1,4 @@
-package attractions;
+package ThemePark.attractions;
 
 import people.Visitor;
 
@@ -23,6 +23,10 @@ public abstract class Attraction {
 
     public int getVisitCount() {
         return visitCount;
+    }
+
+    public void setVisitCount() {
+        this.visitCount += 1;
     }
 
     public String sellTicket(Visitor visitor){

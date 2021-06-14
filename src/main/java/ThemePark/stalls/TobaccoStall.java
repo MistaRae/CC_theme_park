@@ -1,4 +1,4 @@
-package stalls;
+package ThemePark.stalls;
 
 import behaviours.ISecurity;
 import people.Visitor;

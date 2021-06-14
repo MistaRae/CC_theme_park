@@ -1,4 +1,4 @@
-package stalls;
+package ThemePark.stalls;
 
 public enum ParkingSpot {
     A1,
