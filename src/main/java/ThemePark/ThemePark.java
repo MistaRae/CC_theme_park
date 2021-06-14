@@ -2,6 +2,7 @@ package ThemePark;
 
 import ThemePark.attractions.Attraction;
 import ThemePark.stalls.Stall;
+import behaviours.IReviewed;
 import people.Visitor;
 
 import java.lang.reflect.Array;
@@ -23,10 +24,20 @@ public class ThemePark {
     }
 
     public void visit(Visitor visitor, Attraction attraction){
-        visitor.addToVisitedAttractions(attraction);
-        attraction.setVisitCount();
-
+        if (attraction.sellTicket(visitor)) {
+            visitor.addToVisitedAttractions(attraction);
+            attraction.setVisitCount();
+        }
 
     }
 
+    public ArrayList<IReviewed> getAllAllowedFor(Visitor visitor){
+        ArrayList<IReviewed> allowed = new ArrayList<>();
+        int age = visitor.getAge();
+        double height = visitor.getHeight();
+        if (age > 18){
+            allowed.add()
+            return allowed;
+        }
+    }
 }

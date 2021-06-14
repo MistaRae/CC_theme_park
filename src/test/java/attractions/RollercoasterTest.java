@@ -67,13 +67,13 @@ public class RollercoasterTest {
 
     @Test
     public void chargesForEntryNormalHeight(){
-        assertEquals("ticket sold",rollerCoaster.sellTicket(visitor2));
+        assertEquals(true,rollerCoaster.sellTicket(visitor2));
         assertEquals(31.60, visitor2.getMoney(), 0.00);
     }
 
     @Test
     public void wontChargeForFailedSecurityCheck(){
-        assertEquals("this visitor may not buy a ticket",rollerCoaster.sellTicket(visitor));
+        assertEquals(false,rollerCoaster.sellTicket(visitor));
         assertEquals(40.00, visitor.getMoney(), 0.00);
     }
 

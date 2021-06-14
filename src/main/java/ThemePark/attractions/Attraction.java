@@ -29,7 +29,7 @@ public abstract class Attraction {
         this.visitCount += 1;
     }
 
-    public String sellTicket(Visitor visitor){
-          return "Ticket sold";
+    public boolean sellTicket(Visitor visitor){
+          return true;
     }
 }

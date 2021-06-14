@@ -23,12 +23,12 @@ public class Dodgems extends Attraction implements IReviewed, ITicketed {
         return defaultPrice();
     }
 
-    public String sellTicket(Visitor visitor){
+    public boolean sellTicket(Visitor visitor){
         double ticketPrice = priceFor(visitor);
         if (visitor.getMoney() > ticketPrice) {
             visitor.buyTicket(ticketPrice);
-            return "ticket sold";
-        } else return "this visitor may not buy a ticket";
+            return true;
+        } else return false;
     }
 
 }

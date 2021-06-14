@@ -2,6 +2,7 @@ import ThemePark.ThemePark;
 import ThemePark.attractions.Attraction;
 import ThemePark.attractions.RollerCoaster;
 import ThemePark.stalls.Stall;
+import behaviours.IReviewed;
 import org.junit.Before;
 import org.junit.Test;
 import people.Visitor;
@@ -41,9 +42,21 @@ public class ThemeParkTest {
     }
 
     @Test
-    public void parkIncrementsVisitCount(){
-        themePark.visit(visitor3,rollerCoaster);
+    public void parkIncrementsVisitCount() {
+        themePark.visit(visitor3, rollerCoaster);
         assertEquals(1, rollerCoaster.getVisitCount());
     }
+
+    @Test
+    public void visitDeductsTicketPriceFromVisitor(){
+        themePark.visit(visitor3, rollerCoaster);
+        assertEquals(31.60, visitor3.getMoney(),0.00);
+    }
+
+//    @Test
+//    public void getAllAllowedWorks(){
+//        themePark.getAllAllowedFor(visitor);
+//        assertEquals(7, );
+//    }
 
 }

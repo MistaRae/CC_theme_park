@@ -31,11 +31,11 @@ public class RollerCoaster  extends Attraction implements ISecurity, IReviewed, 
     }
 
     @Override
-    public String sellTicket(Visitor visitor) {
+    public boolean sellTicket(Visitor visitor) {
         double ticketPrice = priceFor(visitor);
         if (isAllowedTo(visitor) && visitor.getMoney() > ticketPrice) {
             visitor.buyTicket(ticketPrice);
-            return "ticket sold";
-        } else return "this visitor may not buy a ticket";
+            return true;
+        } else return false;
     }
 }
